@@ -1,0 +1,5 @@
+proc glm data= data name;
+class Factor Block;
+model y= Factor Block / ss1 ss3;
+lsmeans Factor / adjust=tukey pdiff=all alpha=0.05 cl;
+quit;
